@@ -5,4 +5,8 @@ export class PgCell extends HTMLDivElement {
     height: number = 0;
     type: string = "";
     parentHeader?: string = "";
+
+    constructor(){
+        super();
+    }
 }

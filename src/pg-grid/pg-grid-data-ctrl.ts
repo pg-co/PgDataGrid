@@ -15,28 +15,20 @@ export class PgGridDataCtrl<T> {
 
     constructor(dataSource?: T[] | Observable<T[]>) {
         // regarding Data
-        if(dataSource !== undefined) {
-            if(Array.isArray(dataSource)){
-                // initialize Observable
-                if(dataSource.length > 0) { this.dataSetup(dataSource); }
-                else { this.dataSetup([]); }
-            }
-            else if(dataSource instanceof Observable){
-                this.dataSetup(dataSource);
-            }
-        }
-        else { 
-            this.dataSetup([]);
-        }
-
-        // subscribe to Data
-        this.dataSub = this.dataContent$.subscribe({
-            next: (_data) => this.data = _data,
-            error: (_err) => console.error(_err)
-        });
-
-
-        // 
+        // if(dataSource !== undefined) {
+        //     if(Array.isArray(dataSource)){
+        //         // initialize Observable
+        //         if(dataSource.length > 0) { this.dataSetup(dataSource); }
+        //         else { this.dataSetup([]); }
+        //     } 
+        //     else if(dataSource instanceof Observable){ this.dataSetup(dataSource); }
+        // } 
+        // else { this.dataSetup([]); }
+        // // subscribe to Data
+        // this.dataSub = this.dataContent$.subscribe({
+        //     next: (_data) => this.data = _data,
+        //     error: (_err) => console.error(_err)
+        // });
     }
 
     /**
@@ -59,7 +51,12 @@ export class PgGridDataCtrl<T> {
 
  
 
-
+    /**
+     * 
+     * @param data collection of elements to display
+     * @info oly applies if the grid wasn't initialized with an external Observable
+     * @info throws PgUpdateDataException on wrong usage
+     */
     public updateData(data: T[]){
         if(this.isExternObs === true)
             throw PgUpdateDataException('Can\'t set data internallly because current Data is provided by external Observalble. Try setting the data via your internal rxjs Subject!');
