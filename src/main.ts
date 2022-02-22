@@ -1,6 +1,6 @@
 import "./style.css";
 
-import { PgGrid } from "./pg-grid/pg-grid";
+import { PgGrid, PgGridParamter } from "./pg-grid/pg-grid";
 import { PgGridDataCtrl } from "./pg-grid/pg-grid-data-ctrl";
 import { PgGridCtrl } from "./pg-grid/pg-grid-ctrl";
 
@@ -10,13 +10,45 @@ export interface test {
 	o: number;
 }
 
+const testData: test[] = [
+	{
+		he: 1,
+		ll: "string",
+		o: 2
+	},
+	{
+		he: 2,
+		ll: "Test",
+		o: 3
+	},
+	{
+		he: 3,
+		ll: "number",
+		o: 4
+	},
+	{
+		he: 4,
+		ll: "World",
+		o: 5
+	},
+	{
+		he: 23234234,
+		ll: "Hello",
+		o: 2363
+	},
+]
+
 const app = document.querySelector<HTMLDivElement>("#app")!;
+
+const params: PgGridParamter<test> = {
+	parent_div_id: '#app',
+	headers: ['he', 'll', '0'],
+	dataSource: testData
+}
 
 // init
 // try{
-let pgDataCtrl = new PgGridDataCtrl<test>();
-let pgCtrl = new PgGridCtrl<test>(app);
-// let pgGrid = new PgGrid<test>("#app", app);
+let pgGrid = new PgGrid<test>(params);
 
 // }
 // catch(e){
