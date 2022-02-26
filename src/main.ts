@@ -1,6 +1,6 @@
 import "./style.css";
 
-import { PgGrid, PgGridParamter } from "./pg-grid/pg-grid";
+import { PgGrid, PgGridParamter } from "./pg-grid";
 import { PgGridDataCtrl } from "./pg-grid/pg-grid-data-ctrl";
 import { PgGridCtrl } from "./pg-grid/pg-grid-ctrl";
 
