@@ -34,9 +34,6 @@ export class PgGrid<T> {
 		this.findParentDiv(param.parent_div_id, param.parent_div);
 		// setup Grind Control
 		this.pgGridCtrl = new PgGridCtrl<T>(this.parentDiv, param.headers, param.dataSource);
-		
-
-
 	}
 
 	private findParentDiv(pDiv_address: string, pDiv?: HTMLDivElement){

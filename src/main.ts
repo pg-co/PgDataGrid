@@ -13,7 +13,7 @@ export interface test {
 const testData: test[] = [
 	{
 		he: 1,
-		ll: "string",
+		ll: "stringwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww",
 		o: 2
 	},
 	{
@@ -42,7 +42,7 @@ const app = document.querySelector<HTMLDivElement>("#app")!;
 
 const params: PgGridParamter<test> = {
 	parent_div_id: '#app',
-	headers: ['he', 'll', '0'],
+	headers: ['he', 'll', 'o'],
 	dataSource: testData
 }
 

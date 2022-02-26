@@ -1,0 +1,21 @@
+.cell {
+    overflow: hidden;
+    padding: 0 5px;
+}
+
+.header {
+    padding: 0 5px;
+    outline: 1px;
+    resize: horizontal;
+    overflow: auto;
+    clear: both;
+}
+
+.row:hover {
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.row {
+    padding: 2px 0;
+}
